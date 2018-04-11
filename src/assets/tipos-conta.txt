@@ -1,0 +1,5 @@
+50|Emprestimo
+90|Colateral
+20|Conta_a_ordem
+30|Deposito_a_prazo
+40|XXX

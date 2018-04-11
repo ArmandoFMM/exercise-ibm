@@ -1,0 +1,56 @@
+<div style="text-align:center">
+  <h1>
+  </h1>
+  <table class="table table-striped table-bordered" *ngIf="tiposCliente && tiposConta && cambios">
+    <thead>
+      <tr>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th [attr.colspan]="tiposConta.length" *ngFor="let tpCliente of tiposCliente">{{tpCliente.descricao}}</th>
+      </tr>
+      <tr>
+          <th>
+                Cliente
+          </th>
+          <th>
+                Colaterizado
+          </th>
+          <ng-container *ngFor="let tpCliente of tiposCliente">
+                <th *ngFor="let tpConta of tiposConta">
+                  {{tpConta.descricao}}
+                </th>
+          </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>
+          {{cliente.id}}
+        </td>
+        <td>
+            {{cliente.colaterizado}}
+        </td>
+        <ng-container *ngFor="let tpCliente of tiposCliente; let i=index">
+            <td *ngFor="let tpConta of tiposConta" class="sum">
+              <ng-container *ngIf="cliente.tipoCliente.id === tpCliente.id && somaSaldoTipo(cliente.contas, tpConta.id) !== 0 ">
+                      {{somaSaldoTipo(cliente.contas, tpConta.id)| number}}
+              </ng-container>
+            </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <td>
+            Total
+        </td>
+        <td>
+        </td>
+        <td  *ngFor="let total of totais">
+            {{total | number}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

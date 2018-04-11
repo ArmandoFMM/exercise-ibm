@@ -1,0 +1,21 @@
+
+th, td {
+  font-weight:normal;
+  padding:5px;
+  width:300px;
+  vertical-align:top;
+}
+th {
+  background:#00B0F0;
+}
+tr + tr th, tbody th {
+  background:#DAEEF3;
+}
+tr + tr, tbody {
+  text-align:left
+}
+table, th, td {
+  border:solid 1px;
+  border-collapse:collapse;
+  table-layout:fixed;
+}

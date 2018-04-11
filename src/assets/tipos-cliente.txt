@@ -1,0 +1,5 @@
+3|Empresa
+4|ENI
+1|Particular_Nacional
+2|Particular_estrangeiro
+5|XXX
